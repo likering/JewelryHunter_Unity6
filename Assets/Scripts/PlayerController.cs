@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rbody;//PlayerについているRigidbody2Dを扱うための変数
 
+    Animator animetor;//Animetorコンポーネントを扱うための変数
+
     float axisH;//入力の方向を記憶するための変数
 
     bool gojump = false;//ジャンプフラグ（true:真on false:偽off）
@@ -23,8 +25,9 @@ public class PlayerController : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody2D>();//Playerについているコンポーネント情報を取得
 
+        animetor = GetComponent<Animator>();
+
     }
-    // Update is called once per frame
     void Update()
     {
 
@@ -70,6 +73,18 @@ public class PlayerController : MonoBehaviour
             gojump = false;//フラグをoffに戻す
 
         }
+       // if (onGround)//地面にいる時
+       // {
+            if (axisH == 0)//左右が押されていない
+            {
+                animetor.SetBool("Run",false);//idleアニメに切り替え
+
+            }
+            else//左右が押されている
+            {
+                animetor.SetBool("Run",true);//Runアニメに切り替え
+            }
+      //  }
     }
     //ジャンプボタンが押された時に呼び出されるメソッド
     void Jump()
@@ -77,6 +92,7 @@ public class PlayerController : MonoBehaviour
         if (onGround)
         {
             gojump = true;//ジャンプフラグをon
+            animetor.SetTrigger("Jump");
         }
     }
 }
