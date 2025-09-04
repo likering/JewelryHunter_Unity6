@@ -190,11 +190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6485743527086815518, guid: 9fea396f17a0b384987337ec847d2a23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.44
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 6485743527086815518, guid: 9fea396f17a0b384987337ec847d2a23, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.91
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 6485743527086815518, guid: 9fea396f17a0b384987337ec847d2a23, type: 3}
       propertyPath: m_LocalPosition.z
@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -364,12 +365,32 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.34, y: -0.16, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebfaa1aa17550f14a884bd65a03261c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftLimit: -0.6
+  rightLimit: 10
+  bottomLimit: -0.16
+  topLimit: 0.56
+  isScrollx: 1
+  scrollSpeedx: 0.5
+  isScrolly: 1
+  scrollSpeedy: 0.5
 --- !u!1001 &531604849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -899,7 +920,7 @@ GameObject:
   - component: {fileID: 2078162415}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -968,7 +989,7 @@ Transform:
   m_GameObject: {fileID: 2078162409}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.29, y: -1.27, z: 0.6170213}
+  m_LocalPosition: {x: 0.55, y: -1.24, z: 0.6170213}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -990,7 +1011,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 81dc145faef564d4d901297896f97d5c, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1011,7 +1032,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 81dc145faef564d4d901297896f97d5c, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
