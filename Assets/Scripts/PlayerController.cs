@@ -73,18 +73,18 @@ public class PlayerController : MonoBehaviour
             gojump = false;//フラグをoffに戻す
 
         }
-       // if (onGround)//地面にいる時
-       // {
-            if (axisH == 0)//左右が押されていない
-            {
-                animetor.SetBool("Run",false);//idleアニメに切り替え
+        // if (onGround)//地面にいる時
+        // {
+        if (axisH == 0)//左右が押されていない
+        {
+            animetor.SetBool("Run", false);//idleアニメに切り替え
 
-            }
-            else//左右が押されている
-            {
-                animetor.SetBool("Run",true);//Runアニメに切り替え
-            }
-      //  }
+        }
+        else//左右が押されている
+        {
+            animetor.SetBool("Run", true);//Runアニメに切り替え
+        }
+        //  }
     }
     //ジャンプボタンが押された時に呼び出されるメソッド
     void Jump()
@@ -93,6 +93,16 @@ public class PlayerController : MonoBehaviour
         {
             gojump = true;//ジャンプフラグをon
             animetor.SetTrigger("Jump");
+        }
+    }
+    //isTtigger特性をもっているColliderとぶつかったら処理される
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if (collision.gameObject.Tag=="Goal")
+        if (collision.gameObject.CompareTag("Goal"))
+        {
+            GameManager.gameState = "gameclear";
+            Debug.Log("ゴールに接触した！");
         }
     }
 }
