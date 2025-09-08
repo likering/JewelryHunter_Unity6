@@ -136,12 +136,15 @@ public class PlayerController : MonoBehaviour
     //ゲームオーバーした時のメソッド
     public void GameOver()
     {
-        animetor.SetBool("Dead",true);//デッドアニメに切り替え
+        animetor.SetBool("Dead", true);//デッドアニメに切り替え
         GameStop();
         //当たり判定を無効
         GetComponent<CapsuleCollider2D>().enabled = false;
         //少し上に飛び跳ねさせる
-        rbody.AddForce(new Vector2(0,5),ForceMode2D.Impulse);
+        rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+
+        //プレイヤーを3秒後に抹消
+        Destroy(gameObject, 3.0f);
 
     }
     void GameStop()
