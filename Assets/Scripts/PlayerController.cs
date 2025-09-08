@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -116,11 +117,31 @@ public class PlayerController : MonoBehaviour
             Debug.Log("ゴールに接触した！");
             Goal();
         }
+
+        if (collision.gameObject.CompareTag("Dead"))
+        {
+            GameManager.gameState = "gameover";
+            Debug.Log("ゲームオーバー");
+            GameOver();
+
+        }
     }
+    //ゴールした時のメソッド
     public void Goal()
     {
         animetor.SetBool("Clear", true);//クリアアニメに切り替え
         GameStop();//プレイヤーのVelocityを止めるメソッド
+
+    }
+    //ゲームオーバーした時のメソッド
+    public void GameOver()
+    {
+        animetor.SetBool("Dead",true);//デッドアニメに切り替え
+        GameStop();
+        //当たり判定を無効
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        //少し上に飛び跳ねさせる
+        rbody.AddForce(new Vector2(0,5),ForceMode2D.Impulse);
 
     }
     void GameStop()
