@@ -5627,6 +5627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item
       objectReference: {fileID: 0}
+    - target: {fileID: 1982328898179128612, guid: e37de8756cb304545bf6993911edcaf8, type: 3}
+      propertyPath: m_TagString
+      value: ItemScore
+      objectReference: {fileID: 0}
     - target: {fileID: 6463615815207128564, guid: e37de8756cb304545bf6993911edcaf8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

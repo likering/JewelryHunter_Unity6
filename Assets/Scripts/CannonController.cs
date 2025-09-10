@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 public class CannonController : MonoBehaviour
 {
     [Header("生成プレハブ/時間/速度/範囲")]
-    public GameObject objPrefab;
+    public GameObject objPrefab;//発生させるPrefabデータ
     public float delayTime = 3.0f;//生成時間
     public float fireSpeed = 4.0f;//発射体の速度
     public float length = 8.0f;//生成範囲
@@ -68,8 +68,8 @@ public class CannonController : MonoBehaviour
         }
     }
     //範囲表示
-     void OnDrawGizmos()
+    void OnDrawGizmosSelected()
     {
-        
+        Gizmos.DrawWireSphere(transform.position, length);
     }
 }
