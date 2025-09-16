@@ -2,7 +2,7 @@
 
 [ゲームサンプル](https://likering.github.io/JewelryHunter_web/)
 
-![ゲーム画面](readmeImage\Image20250916112911.jpg)
+![ゲーム画面](Image20250916112911.jpg)
 
 ## 訓練校で学習する初２D作品　
 * playerの動作
@@ -15,14 +15,14 @@
 Playerのアニメ切り替えには各クリップを、トランジションで繋いでフラグで管理しました。
 トランジションを組み込むことで、アニメ切り替えが滑らかになり
 かつコーディングが効率的なものになりました。
-![トランジションの絵](readmeImage\Image20250916120032.jpg)
+![トランジションの絵](Image20250916120032.jpg)
 
 
 ## Itemのコーディングの効率化
 Itemは列挙型のItemColorを自作して、ItemColor型の変数次第で何色が選ばれているかにより
 見た目が変わるようなコーディングの工夫を行いました。
 
-![Itemコーディングの絵](readmeImage\Image20250916131041.jpg)
+![Itemコーディングの絵](Image20250916131041.jpg)
  
   ```c#
   using UnityEngine;
